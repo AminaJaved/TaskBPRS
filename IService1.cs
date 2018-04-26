@@ -21,7 +21,24 @@ namespace TBPserver
         
         [OperationContract]
         string GetData(int value);
+        [OperationContract]
+        void resetPassword(string username, string password,string ques, string ans);
+
+        [OperationContract]
+        void add(string name, string password, string id, string des);
+
+        [OperationContract]
+        void addemployee(Employee emp);
+
+        [OperationContract]
+        List<Employee> getEmployeeList();
+
+
         
+
+        [OperationContract]
+        CompositeType GetDataUsingDataContract(CompositeType composite);
+
         // TODO: Add your service operations here
     }
 

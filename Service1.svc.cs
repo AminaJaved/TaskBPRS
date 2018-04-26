@@ -36,6 +36,45 @@ namespace TBPserver
             return check;
         }
 
+        public void resetPassword(string username, string userpassword, string ques, string ans)
+        {
+            bool reset = false;
+            foreach (Admin a in AdminDL.adminName)
+            {
+                if (a.AdminName == username && a.Sec_question == ques && a.Sec_answer==ans)
+                {
+                    a.AdminPassword = userpassword;
+                    reset = true;
+                }
+            }
+            
+        }
+
+        public void add(string name, string password, string id, string des)
+        {
+            Employee ad = new Employee();
+            ad.EmployeeName = name;
+            ad.EmployeePassword = password;
+            ad.EmployeeID = id;
+            ad.EmployeeDesignation = des;
+        }
+
+        public void addemployee(Employee emp)
+        {
+            EmloyeeDL.employeeName.Add(emp);
+        }
+
+        public string GetData(int value)
+        {
+            return string.Format("You entered: {0}", value);
+        }
+
+        public List<Employee> getEmployeeList()
+        {
+            return EmloyeeDL.employeeName;
+        }
+
+        
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
