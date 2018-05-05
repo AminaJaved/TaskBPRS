@@ -1,0 +1,4 @@
+C:\Users\irfan rasheed\Desktop\TBPserver\TBPserver\bin\TBPserver.dll
+C:\Users\irfan rasheed\Desktop\TBPserver\TBPserver\bin\TBPserver.pdb
+C:\Users\irfan rasheed\Desktop\TBPserver\TBPserver\obj\Debug\TBPserver.dll
+C:\Users\irfan rasheed\Desktop\TBPserver\TBPserver\obj\Debug\TBPserver.pdb

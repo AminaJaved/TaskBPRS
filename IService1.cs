@@ -34,7 +34,23 @@ namespace TBPserver
         List<Employee> getEmployeeList();
 
 
-        
+        [OperationContract]
+        void addTask(Task1 tsk);
+
+        [OperationContract]
+        List<Task1> getTaskList();
+
+        [OperationContract]
+        void DeleteEmp(string name, string id);
+
+        [OperationContract]
+        void ShowMyTasks(string name);
+
+        [OperationContract]
+        void calculateSalary();
+
+        [OperationContract]
+        bool valid(string username, string userpassword);
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);

@@ -74,7 +74,59 @@ namespace TBPserver
             return EmloyeeDL.employeeName;
         }
 
-        
+        public void addTask(Task1 tsk)
+        {
+            TaskDL.tsk.Add(tsk);
+        }
+
+        public List<Task1> getTaskList()
+        {
+            return TaskDL.tsk;
+        }
+
+        public void DeleteEmp(string name, string id)
+        {
+            bool reset = false;
+            foreach (Employee a in EmloyeeDL.employeeName)
+            {
+                if (a.EmployeeName == name && a.EmployeeID == id )
+                {                    
+                    reset = true;
+                    a.EmployeeName = "";
+                    a.EmployeePassword = "";
+                    a.EmployeeID = "";
+                    a.EmployeeDesignation="";
+
+                }
+            }
+            
+        }
+
+        public void ShowMyTasks(string name)
+        {
+            //bool isFound = false;
+
+            foreach (Task1 t in TaskDL.tsk)
+            {
+                if (t.EmpName == name)
+                {
+                    EmployeeTask.tsk.Add(t);                  
+                    
+                }
+            }
+        }
+        int i = 0;
+        public void calculateSalary()
+        {
+            foreach (Task1 a in TaskDL.tsk)
+            {
+                if (a.Task_Done == true)
+                {
+                    i = i + 10;
+                    Salary.x=(i);
+                }
+            }
+        }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
@@ -89,6 +141,18 @@ namespace TBPserver
             return composite;
         }
 
-        
+        public bool valid(string username, string userpassword)
+        {
+            Boolean check = false;
+            foreach (Employee a in EmloyeeDL.employeeName)
+            {
+                if (a.EmployeeName == username && a.EmployeePassword == userpassword)
+                {
+                    check = true;
+                }
+
+            }
+            return check;
+        }
     }
 }
